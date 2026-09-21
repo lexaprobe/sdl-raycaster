@@ -1,6 +1,8 @@
-CC = gcc
-CFLAGS = -Wvla -Wall -std=c99 
-LDFLAGS = -F/Library/Frameworks -framework sdl3 -Wl,-rpath,/Library/Frameworks
+CC ?= cc
+CFLAGS ?= -Wvla -Wall -std=c99 
+SDL ?= /Library/Frameworks
+
+LDFLAGS = -F$(SDL) -framework sdl3 -Wl,-rpath,$(SDL)
 
 TARGET = main
 SRC = src/main.c
